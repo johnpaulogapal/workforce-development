@@ -1,0 +1,56 @@
+* {
+ font-family: 'Nunito', sans-serif;
+}
+
+
+body {
+    /* background: lightgray; */
+    height: 100vh;
+    width: 100%;
+}
+
+.login-container {
+    height: 100%;
+    /* background-color: #008080; */
+}
+
+.btn-workforce {
+    background-color: #008080;
+}
+
+.btn-workforce:hover {
+    background-color: #007070;
+}
+
+.bg-workforce {
+    background-color: #008080;
+}
+
+.text-workforce {
+    color: #008080;
+}
+
+.border-workforce {
+    border-top: 2.5px solid #bf1e2e;
+}
+
+.custom-shape-divider-bottom-1682492827 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1682492827 svg {
+    position: relative;
+    display: block;
+    width: calc(135% + 1.3px);
+    height: 135px;
+}
+
+.custom-shape-divider-bottom-1682492827 .shape-fill {
+    fill: #008080;
+}
