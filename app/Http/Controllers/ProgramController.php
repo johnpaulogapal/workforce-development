@@ -24,7 +24,7 @@ class ProgramController extends Controller
     public function store(Request $request)
     {
         $programsInfo = $request->validate([
-            'program_name' => 'required',
+            'name' => 'required',
             'from' => 'required',
             'to' => 'required',
         ]);
@@ -36,14 +36,6 @@ class ProgramController extends Controller
         
         return redirect()->route('programs.index')->with('message', 'Program Successfully Added');
     }
-
-    function computeDuration($fromDate, $toDate) {
-        $from = Carbon::createFromFormat('Y-m-d', $fromDate);
-        $to = Carbon::createFromFormat('Y-m-d', $toDate);
-        $duration = $to->diffInDays($from);
-        return $duration;
-    }
-
     
     public function edit(Wp_program $program)
     {
@@ -55,7 +47,7 @@ class ProgramController extends Controller
     public function update(Wp_program $program, Request $request)
     {
         $programsInfo = $request->validate([
-            'program_name' => 'required',
+            'name' => 'required',
             'from' => 'required',
             'to' => 'required',
         ]);
@@ -72,6 +64,14 @@ class ProgramController extends Controller
         $program->delete();
         
         return redirect(route('programs.index'))->with('message', 'Program Successfully Deleted');
+    }
+
+    // Function for the Duration
+    function computeDuration($fromDate, $toDate) {
+        $from = Carbon::createFromFormat('Y-m-d', $fromDate);
+        $to = Carbon::createFromFormat('Y-m-d', $toDate);
+        $duration = $to->diffInDays($from);
+        return $duration;
     }
 
 }

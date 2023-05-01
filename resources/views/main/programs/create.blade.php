@@ -9,9 +9,9 @@
             <div class="mt-5 row">
                 <div class="form-row justify-content-center">
                     <div class="form-group col-8">
-                        <label for="program_name">Program's Name</label>
-                        <input name="program_name" type="text" class="form-control" value="{{old('program_name')}}">
-                        @error('program_name')
+                        <label for="name">Program's Name</label>
+                        <input name="name" type="text" class="form-control" value="{{old('name')}}">
+                        @error('name')
                             <small class="text-danger text-sm">{{ $message}}</small>
                         @enderror
                     </div>

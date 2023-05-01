@@ -38,7 +38,8 @@ Route::group(['middleware' => ['auth']], function () {
 
 // [Start] - Subjects
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/subjects', 'SubjectController@index')->name('subjects.index');
-    
+    Route::get('/program/{program}/subjects', 'SubjectController@index')->name('subjects.index');
+    Route::get('/program/{program}/subject/create', 'SubjectController@create')->name('subjects.create');
+    Route::post('/program/subject/create', 'SubjectController@store')->name('subjects.store');
 });
 // [End] - Subjects

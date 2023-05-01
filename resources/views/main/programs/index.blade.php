@@ -34,15 +34,15 @@
         <tbody>
             @foreach ($programs as $program)
             <tr>
-                <td class="align-middle text-center">{{$program->program_name}}</td>
+                <td class="align-middle text-center">{{$program->name}}</td>
                 <td class="align-middle text-center">{{date('M d, Y', strtotime($program->from))}}</td>
                 <td class="align-middle text-center">{{date('M d, Y', strtotime($program->to))}}</td>
                 <td class="align-middle text-center">{{$program->duration}} Days</td>
                 <td class="align-middle text-center">{{$program->created_by}}</td>
                 <td class="align-middle text-center">{{date('M d, Y', strtotime($program->created_at))}}</td>
                 <td class="align-middle text-center">
-                    <a href="{{route('programs.edit', $program->id)}}" class="btn btn-primary btn-sm tracking-wider mr-2">
-                        <i class='bx bx-search-alt-2'></i> View Subject
+                    <a href="{{route('subjects.index', $program->id)}}" class="btn btn-primary btn-sm tracking-wider mr-2">
+                        <i class='bx bx-search-alt-2'></i> View Subjects
                     </a>
                     <a href="{{route('programs.edit', $program->id)}}" class="btn btn-warning btn-sm tracking-wider mr-2">
                         <i class='bx bxs-edit'></i> Edit
@@ -64,7 +64,7 @@
                     </button>
                     </div>
                     <div class="modal-body">
-                        Are you sure you want to delete {{$program->program_name}} program?
+                        Are you sure you want to delete {{$program->name}} program?
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

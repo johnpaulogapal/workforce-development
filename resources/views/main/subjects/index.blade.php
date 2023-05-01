@@ -11,45 +11,45 @@
 @endif 
 
 <div class="mx-4 my-3 d-flex justify-content-between align-items-center">
-    <h3 class="tracking-wider text-workforce"><i class='bx bx-collection' ></i>Programs</h3>
-    <a href="{{route('programs.create')}}" class="btn btn-workforce btn-sm d-flex align-items-center">
+    <a href="{{route('programs.index')}}" class="btn btn-secondary btn-sm d-flex align-items-center">
+        <i class='bx bx-arrow-back mr-1'></i>
+        <span class="text-lg">Go Back</span>
+    </a>
+    <h3 class="tracking-wider text-workforce"><i class='bx bx-chalkboard' ></i> Subjects of {{$program->name}}</h3>
+    <a href="{{route('subjects.create', $program->id)}}" class="btn btn-workforce btn-sm d-flex align-items-center">
         <i class='bx bx-plus-circle text-2xl mr-1'></i>
-        <span class="text-lg">Add Program</span>
+        <span class="text-lg">Add Subject</span>
     </a>
 </div>
 
 <div class="mx-4">
-    <table id="programs" class="table rounded shadow">
+    <table id="subjects" class="table rounded shadow">
         <thead class="text-workforce">
             <tr>
-                <th scope="col" class="tracking-wider text-center">PROGRAM'S NAME</th>
-                <th scope="col" class="tracking-wider text-center">FROM</th>
-                <th scope="col" class="tracking-wider text-center">TO</th>
-                <th scope="col" class="tracking-wider text-center">DURATION</th>
-                <th scope="col" class="tracking-wider text-center">CREATED BY</th>
-                <th scope="col" class="tracking-wider text-center">CREATED ON</th>
+                <th scope="col" class="tracking-wider text-center">SUBJECT'S NAME</th>
+                <th scope="col" class="tracking-wider text-center">SUBJECT'S CODE</th>
+                <th scope="col" class="tracking-wider text-center">SUBJECT'S DESCRIPTION</th>
+                <th scope="col" class="tracking-wider text-center">VENUE</th>
                 <th scope="col" class="tracking-wider text-center">OPTIONS</th>
             </tr>
         </thead>
         <tbody>
-            {{-- @foreach ($programs as $program) --}}
+            @foreach ($subjects as $subject)
             <tr>
-                <td class="align-middle text-center"></td>
-                <td class="align-middle text-center"></td>
-                <td class="align-middle text-center"></td>
-                <td class="align-middle text-center"></td>
-                <td class="align-middle text-center"></td>
-                <td class="align-middle text-center"></td>
+                <td class="align-middle text-center">{{$subject->name}}</td>
+                <td class="align-middle text-center">{{$subject->code}}</td>
+                <td class="align-middle text-center">{{$subject->description}}</td>
+                <td class="align-middle text-center">{{$subject->venue}}</td>
                 <td class="align-middle text-center">
-                    <a href="{{route('programs.edit', $program->id)}}" class="btn btn-primary btn-sm tracking-wider mr-2">
+                    {{-- <a href="{{route('programs.edit', $program->id)}}" class="btn btn-primary btn-sm tracking-wider mr-2">
                         <i class='bx bx-search-alt-2'></i> View Subject
-                    </a>
-                    <a href="{{route('programs.edit', $program->id)}}" class="btn btn-warning btn-sm tracking-wider mr-2">
+                    </a> --}}
+                    {{-- <a href="{{route('programs.edit', $program->id)}}" class="btn btn-warning btn-sm tracking-wider mr-2">
                         <i class='bx bxs-edit'></i> Edit
-                    </a>
-                    <button class="btn btn-danger btn-sm tracking-wider" data-toggle="modal" data-target="#deleteModal{{$program->id}}">
+                    </a> --}}
+                    {{-- <button class="btn btn-danger btn-sm tracking-wider" data-toggle="modal" data-target="#deleteModal{{$program->id}}">
                         <i class='bx bx-trash-alt'></i> Delete
-                    </button>
+                    </button> --}}
                 </td>
             </tr>
 
