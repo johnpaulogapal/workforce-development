@@ -1,0 +1,43 @@
+
+.header-workforce {
+    border-top: #008080 solid 10px;
+}
+
+.text-workforce {
+    color: #008080;
+}
+
+.border-workforce {
+    border-color: #008080;
+}
+
+.btn-workforce{
+    background-color: #008080;
+    color: #ffff;
+}
+
+.btn-workforce:hover {
+    background-color: #007070;
+    color: #ffff;
+}
+
+.text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.tracking-wider {
+    letter-spacing: 0.05em;
+}
+
+

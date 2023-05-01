@@ -104,10 +104,13 @@
         </li>
         <li>
             <div class="profile-details">
-                <a href="">
-                    <i class='bx bx-log-out'></i>
-                    <span class="text-light">Logout</span>
-                </a>
+                <form method="POST" action="{{route('logout')}}">
+                @csrf
+                    <button>
+                        <i class='bx bx-log-out'></i>
+                        <span class="text-light">Logout</span>
+                    </button>
+                </form>
                 {{-- <div class="profile-content">
                     <img src="image/profile.jpg" alt="profileImg">
                 </div> --}}
