@@ -27,28 +27,49 @@ class SubjectController extends Controller
 
     public function store(Request $request)
     {
-        $programsInfo = $request->validate([
+        $subjectsInfo = $request->validate([
             'name' => 'required',
             'code' => 'required',
             'description' => 'required',
-            'from' => 'required',
-            'to' => 'required',
+            'schedule' => 'required',
             'venue' => 'required',
         ]);
 
-        $programsInfo['duration'] = $this->computeDuration($request->from, $request->to);
-        $programsInfo['created_by'] = auth()->user()->email;
-        $programsInfo['program_id'] = $request->program_id;
+        $subjectsInfo['created_by'] = auth()->user()->email;
+        $subjectsInfo['program_id'] = $request->program_id;
 
-        Wp_subject::create($programsInfo);
+        Wp_subject::create($subjectsInfo);
         
         return redirect()->route('subjects.index', $request->program_id)->with('message', 'Subject Successfully Added');
     }
 
-    function computeDuration($fromDate, $toDate) {
-        $from = Carbon::createFromFormat('Y-m-d', $fromDate);
-        $to = Carbon::createFromFormat('Y-m-d', $toDate);
-        $duration = $to->diffInDays($from);
-        return $duration;
+    public function edit(Wp_subject $subject)
+    {
+        return view('main.subjects.edit', [
+            'subject' => $subject
+        ]);
     }
+
+    public function update(Wp_subject $subject, Request $request)
+    {
+        $subjectsInfo = $request->validate([
+            'name' => 'required',
+            'code' => 'required',
+            'description' => 'required',
+            'schedule' => 'required',
+            'venue' => 'required',
+        ]);
+
+        $subject->update($subjectsInfo);
+        
+        return redirect()->route('subjects.index', $subject->program_id)->with('message', 'Subject Successfully Added');
+    }
+
+    public function destroy(Wp_subject $subject)
+    {
+        $subject->delete();
+        
+        return redirect(route('subjects.index', $subject->program_id))->with('message', 'Subject Successfully Deleted');
+    }
+
 }

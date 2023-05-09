@@ -41,5 +41,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/program/{program}/subjects', 'SubjectController@index')->name('subjects.index');
     Route::get('/program/{program}/subject/create', 'SubjectController@create')->name('subjects.create');
     Route::post('/program/subject/create', 'SubjectController@store')->name('subjects.store');
+    Route::get('/program/subject/edit/{subject}', 'SubjectController@edit')->name('subjects.edit');
+    Route::put('/program/subject/update/{subject}', 'SubjectController@update')->name('subjects.update');
+    Route::delete('/program/subject/destroy/{subject}', 'SubjectController@destroy')->name('subjects.destroy');
 });
 // [End] - Subjects
+
+

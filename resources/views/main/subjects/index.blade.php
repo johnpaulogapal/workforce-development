@@ -44,31 +44,31 @@
                     {{-- <a href="{{route('programs.edit', $program->id)}}" class="btn btn-primary btn-sm tracking-wider mr-2">
                         <i class='bx bx-search-alt-2'></i> View Subject
                     </a> --}}
-                    {{-- <a href="{{route('programs.edit', $program->id)}}" class="btn btn-warning btn-sm tracking-wider mr-2">
+                    <a href="{{route('subjects.edit', $subject->id)}}" class="btn btn-warning btn-sm tracking-wider mr-2">
                         <i class='bx bxs-edit'></i> Edit
-                    </a> --}}
-                    {{-- <button class="btn btn-danger btn-sm tracking-wider" data-toggle="modal" data-target="#deleteModal{{$program->id}}">
+                    </a>
+                    <button class="btn btn-danger btn-sm tracking-wider" data-toggle="modal" data-target="#deleteModal{{$subject->id}}">
                         <i class='bx bx-trash-alt'></i> Delete
-                    </button> --}}
+                    </button>
                 </td>
             </tr>
 
             {{-- [Start] - Delete Modal --}}
-            {{-- <div class="modal fade" id="deleteModal{{$program->id}}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+            <div class="modal fade" id="deleteModal{{$subject->id}}" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                    <h4 class="modal-title text-danger " id="deleteModalLabel">Deleting Program</h4>
+                    <h4 class="modal-title text-danger " id="deleteModalLabel">Deleting Subject</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                     </div>
                     <div class="modal-body">
-                        Are you sure you want to delete {{$program->program_name}} program?
+                        Are you sure you want to delete {{$subject->name}} subject?
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <form method="POST" action="{{route('programs.destroy', $program->id)}}">
+                        <form method="POST" action="{{route('subjects.destroy', $subject->id)}}">
                         @csrf
                         @method('DELETE')
                             <button class="btn btn-success">Confirm</button>
@@ -76,7 +76,7 @@
                     </div>
                 </div>
                 </div>
-            </div> --}}
+            </div>
             {{-- [End] - Delete Modal --}}
 
             @endforeach

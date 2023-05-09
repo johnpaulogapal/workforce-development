@@ -24,7 +24,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended('/');
+            return redirect()->intended('/')->with('message', 'Welcome back! You have successfully logged in. Let\'s get started!');
         }
 
         return back()->withErrors([
@@ -40,6 +40,6 @@ class AuthController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return redirect('/login')->with('message', 'You are now logged out. Please close your browser to ensure that no one else can access your account.');
     }
 }

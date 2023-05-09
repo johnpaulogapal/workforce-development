@@ -2,8 +2,17 @@
 
 @section('content')
     
+@if(session()->has('message'))
+    <div class="fixed-top mt-5 d-flex justify-content-center " x-data="{show: true}" x-init="setTimeout(() => show = false, 3000)" x-show="show" >
+        <div class="alert alert-success text-2xl align-middle" role="alert">
+            <i class='bx bx-power-off' ></i> {{session('message')}}
+        </div>
+    </div>
+@endif 
 
     <div class="login-container d-flex justify-content-center align-items-center">
+    
+
         <div class="d-flex bg-workforce rounded shadow w-50">
           
             <div class="p-5 w-50 my-auto text-center text-light">

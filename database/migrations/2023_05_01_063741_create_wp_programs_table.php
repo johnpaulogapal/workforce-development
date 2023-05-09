@@ -16,8 +16,6 @@ class CreateWpProgramsTable extends Migration
         Schema::create('wp_programs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->date('from');
-            $table->date('to');
             $table->string('duration');
             $table->string('created_by');
             $table->timestamps();

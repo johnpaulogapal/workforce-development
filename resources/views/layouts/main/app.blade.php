@@ -49,6 +49,9 @@
     {{-- Alphine Js --}}
     <script src="//unpkg.com/alpinejs"></script>
 
+    {{-- Chart Js --}}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <script>
       $(document).ready(function () {
           $('#programs').DataTable();
@@ -58,6 +61,30 @@
           $('#subjects').DataTable();
       });
     </script>
+
+    <script>
+      const ctx = document.getElementById('myChart');
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Railway', 'Engineering', 'IT'],
+          datasets: [{
+            label: 'Number of Applicants in every programs',
+            data: [12, 19, 3],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+    </script>
+ 
 
   </body>
 </html>

@@ -25,11 +25,9 @@ class ProgramController extends Controller
     {
         $programsInfo = $request->validate([
             'name' => 'required',
-            'from' => 'required',
-            'to' => 'required',
+            'duration' => 'required',
         ]);
 
-        $programsInfo['duration'] = $this->computeDuration($request->from, $request->to);
         $programsInfo['created_by'] = auth()->user()->email;
 
         Wp_program::create($programsInfo);
@@ -48,11 +46,8 @@ class ProgramController extends Controller
     {
         $programsInfo = $request->validate([
             'name' => 'required',
-            'from' => 'required',
-            'to' => 'required',
+            'duration' => 'required',
         ]);
-
-        $programsInfo['duration'] = $this->computeDuration($request->from, $request->to);
 
         $program->update($programsInfo);
         
@@ -67,11 +62,11 @@ class ProgramController extends Controller
     }
 
     // Function for the Duration
-    function computeDuration($fromDate, $toDate) {
-        $from = Carbon::createFromFormat('Y-m-d', $fromDate);
-        $to = Carbon::createFromFormat('Y-m-d', $toDate);
-        $duration = $to->diffInDays($from);
-        return $duration;
-    }
+    // function computeDuration($fromDate, $toDate) {
+    //     $from = Carbon::createFromFormat('Y-m-d', $fromDate);
+    //     $to = Carbon::createFromFormat('Y-m-d', $toDate);
+    //     $duration = $to->diffInDays($from);
+    //     return $duration;
+    // }
 
 }

@@ -17,12 +17,11 @@
                         @enderror
                     </div>
                     <div class="form-group col-8">
-                        <label for="inputPassword4">From</label>
-                        <input name="from" type="date" class="form-control" value="{{$program->from}}">
-                    </div>
-                    <div class="form-group col-8">
-                        <label for="inputPassword4">To</label>
-                        <input name="to" type="date" class="form-control" value="{{$program->to}}">
+                        <label for="duration">Program's Duration</label>
+                        <input name="duration" type="text" class="form-control" value="{{$program->duration}}">
+                        @error('duration')
+                            <small class="text-danger text-sm">{{ $message}}</small>
+                        @enderror
                     </div>
                 </div>
             </div>

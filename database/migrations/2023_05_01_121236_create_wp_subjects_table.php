@@ -19,9 +19,7 @@ class CreateWpSubjectsTable extends Migration
             $table->string('name');
             $table->string('code');
             $table->string('description');
-            $table->date('from');
-            $table->date('to');
-            $table->string('duration');
+            $table->string('schedule');
             $table->string('venue');
             $table->string('created_by');
             $table->timestamps();

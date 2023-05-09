@@ -16,13 +16,13 @@
                         @enderror
                     </div>
                     <div class="form-group col-8">
-                        <label for="inputPassword4">From</label>
-                        <input name="from" type="date" class="form-control" value="{{old('from')}}">
+                        <label for="duration">Program's Duration</label>
+                        <input name="duration" type="text" class="form-control" value="{{old('duration')}}">
+                        @error('duration')
+                            <small class="text-danger text-sm">{{ $message}}</small>
+                        @enderror
                     </div>
-                    <div class="form-group col-8">
-                        <label for="inputPassword4">To</label>
-                        <input name="to" type="date" class="form-control" value="{{old('to')}}">
-                    </div>
+    
                 </div>
             </div>
             <div class="mt-5 d-flex justify-content-center align-items-center">

@@ -15,17 +15,12 @@
             </ul>
         </li>
         <li>
-            <div class="iocn-link">
-                <a href="#">
-                <i class='bx bx-collection' ></i>
-                <span class="link_name">Content</span>
-                </a>
-                <i class='bx bxs-chevron-down arrow' ></i>
-            </div>
-            <ul class="sub-menu">
-                <li><a class="link_name" href="#">Content</a></li>
-                <li><a href="#">Programs</a></li>
-                <li><a href="#">Subjects</a></li>
+            <a href="#">
+                <i class='bx bx-clipboard'></i>
+                <span class="link_name">Programs</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Programs</a></li>
             </ul>
         </li>
         <li>
@@ -44,14 +39,16 @@
         </li>
         <li>
             <a href="#">
-                <i class='bx bx-pie-chart-alt-2' ></i>
-                <span class="link_name">Analytics</span>
+                <i class='bx bx-file-blank'></i>
+                <span class="link_name">Enrollment</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">Analytics</a></li>
+                <li><a class="link_name" href="#">Enrollment</a></li>
             </ul>
         </li>
-        <li>
+
+        {{-- [Start] - Other Resources --}}
+        {{-- <li>
             <a href="#">
                 <i class='bx bx-line-chart' ></i>
                 <span class="link_name">Chart</span>
@@ -101,25 +98,19 @@
             <ul class="sub-menu blank">
                 <li><a class="link_name" href="#">Setting</a></li>
             </ul>
-        </li>
+        </li> --}}
+        {{-- [End] - Other Resources --}}
+      
         <li>
-            <div class="profile-details">
-                <form method="POST" action="{{route('logout')}}">
-                @csrf
-                    <button>
-                        <i class='bx bx-log-out'></i>
-                        <span class="text-light">Logout</span>
-                    </button>
-                </form>
-                {{-- <div class="profile-content">
-                    <img src="image/profile.jpg" alt="profileImg">
-                </div> --}}
-                {{-- <div class="name-job">
-                    <div class="profile_name">LOGOUT</div>
-                </div> --}}
-                
-            </div>
+            <form method="POST" action="{{route('logout')}}" class="fixed-bottom mb-2">
+            @csrf
+            <i class='bx bx-log-out'></i>
+                <button class="btn text-light link_name">
+                    Logout
+                </button>
+            </form>
         </li>
+
     </ul>
 </div>
 <section class="home-section">

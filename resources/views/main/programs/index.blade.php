@@ -23,8 +23,6 @@
         <thead class="text-workforce">
             <tr>
                 <th scope="col" class="tracking-wider text-center">PROGRAM'S NAME</th>
-                <th scope="col" class="tracking-wider text-center">FROM</th>
-                <th scope="col" class="tracking-wider text-center">TO</th>
                 <th scope="col" class="tracking-wider text-center">DURATION</th>
                 <th scope="col" class="tracking-wider text-center">CREATED BY</th>
                 <th scope="col" class="tracking-wider text-center">CREATED ON</th>
@@ -35,9 +33,7 @@
             @foreach ($programs as $program)
             <tr>
                 <td class="align-middle text-center">{{$program->name}}</td>
-                <td class="align-middle text-center">{{date('M d, Y', strtotime($program->from))}}</td>
-                <td class="align-middle text-center">{{date('M d, Y', strtotime($program->to))}}</td>
-                <td class="align-middle text-center">{{$program->duration}} Days</td>
+                <td class="align-middle text-center">{{$program->duration}}</td>
                 <td class="align-middle text-center">{{$program->created_by}}</td>
                 <td class="align-middle text-center">{{date('M d, Y', strtotime($program->created_at))}}</td>
                 <td class="align-middle text-center">
